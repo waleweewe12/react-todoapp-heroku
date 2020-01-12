@@ -25,13 +25,13 @@ function Login() {
             username_or_email:username,
             passwords:passwords
         }
-        axios.post('http://localhost:5000/user/login',submit_data)
+        axios.post('/user/login',submit_data)
         .then(res => {
             if(res.data.error==='')
             {
                 localStorage.setItem('token',res.data.token)
                 let Bearer_token='Bearer '+localStorage.getItem('token')
-                axios.post('http://localhost:5000/user/getuser',{Bearer_token})
+                axios.post('/user/getuser',{Bearer_token})
                 .then(res=>{
                     dispatch(submit({username:res.data.authData.username}))
                 })
