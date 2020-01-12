@@ -16,9 +16,12 @@ const PORT = process.env.PORT || 5000; // Step 1
 
 
 // Step 2
-mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/my_database', {
-    useNewUrlParser: true
-});
+mongoose.connect('mongodb+srv://smile69narak:'+process.env.MONGO_ATLAS_PASSWORDS+'@cluster0-m70hg.mongodb.net/test?retryWrites=true&w=majority',
+{
+    useNewUrlParser:true,
+    useCreateIndex:true,
+    useUnifiedTopology: true
+})
 
 // Configuration
 app.use(bodyParser.json());
