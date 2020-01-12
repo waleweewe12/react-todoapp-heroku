@@ -30,7 +30,7 @@ function Todo() {
         const data_username={
           username:user_login.username
         }
-        axios.post('http://localhost:5000/todo/getTodo',data_username)
+        axios.post('/todo/getTodo',data_username)
         .then(res=>{
           let newTodo=res.data
           newTodo=newTodo.sort((a,b)=>(a.finish_date_timestamp > b.finish_date_timestamp ? 1 : -1))
@@ -53,7 +53,7 @@ function Todo() {
           todo:newtodo,
           finish_date:newtododate
         }
-        axios.post('http://localhost:5000/todo/addTodo',data)
+        axios.post('/todo/addTodo',data)
         .then(res=>console.log(res))
         .catch(err=>console.log(err))
         setNewtodo('')

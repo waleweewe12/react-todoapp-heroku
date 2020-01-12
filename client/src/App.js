@@ -23,7 +23,7 @@ function App() {
     if(localStorage.getItem('token'))
     {
       let Bearer_token='Bearer '+localStorage.getItem('token')
-      axios.post('http://localhost:5000/user/getuser',{Bearer_token})
+      axios.post('/user/getuser',{Bearer_token})
       .then(res=>{
         if(localStorage.getItem('token'))
           dispatch(submit({username:res.data.authData.username}))

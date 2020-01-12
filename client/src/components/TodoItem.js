@@ -15,7 +15,7 @@ function TodoItem(props) {
   }
 
   const deleteitem=(e)=>{
-    axios.post('http://localhost:5000/todo/deleteTodo',{id:props.todo_id})
+    axios.post('/todo/deleteTodo',{id:props.todo_id})
     .then(()=>console.log('todo delete!'))
     .catch(err=>console.log(err))
   }
@@ -44,7 +44,7 @@ function TodoItem(props) {
                 }
             }
         }
-        axios.post('http://localhost:5000/todo/updateTodo',data,config)
+        axios.post('/todo/updateTodo',data,config)
         .then(()=>console.log('todo update!'))
         .catch(err=>console.log(err))
     }

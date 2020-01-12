@@ -37,7 +37,7 @@ function Register(){
             passwords:passwords
         }
         dispatch(submit(submit_data))
-        axios.post('/register',submit_data)
+        axios.post('/user/register',submit_data)
         .then(res => console.log(res.data))
         .catch(err=>console.log(err))
 
