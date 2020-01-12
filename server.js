@@ -39,6 +39,11 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+const connection = mongoose.connection
+connection.once('open',()=>{
+    console.log("Mongoose Connection!!")
+})
+
 app.listen(PORT, () => {
     log(`Server is starting at PORT: ${PORT}`);
 });
