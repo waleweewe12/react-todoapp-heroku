@@ -40,6 +40,7 @@ function App() {
   const gettestuser=()=>{
     axios.get('/getuser')
     .then((res)=>{
+      console.log(res)
       setTestuser(res.data.username)
     })
     .catch(err=>console.log(err))
