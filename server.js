@@ -30,9 +30,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', routes);
 const userRouter=require('./api/routes/user_route');
-//const todoRouter=require('./api/routes/todo_route');
+const todoRouter=require('./api/routes/todo_route');
 app.use('/user',userRouter);
-//app.use('/todo',todoRouter);
+app.use('/todo',todoRouter);
 
 // Step 3
 if (process.env.NODE_ENV === 'production') {
