@@ -1,6 +1,4 @@
 const router=require('express').Router();
-const bcrypt=require('bcrypt');
-const jwt = require('jsonwebtoken')
 let todo=require('../models/todo_model');
 
 router.post('/getTodo',(req,res)=>{
