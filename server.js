@@ -33,6 +33,12 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+app.get('/getuser',(req,res)=>{
+    res.send({
+        username:'weerapath'
+    })
+})
+
 app.listen(PORT, () => {
     log(`Server is starting at PORT: ${PORT}`);
 });

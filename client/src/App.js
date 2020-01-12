@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import axios from 'axios'
 import submit from './actions/submit_login'
@@ -16,6 +16,7 @@ function App() {
 
   useEffect(()=>{
     getusername();
+    gettestuser()
   })
 
   const getusername=()=>{
@@ -33,6 +34,15 @@ function App() {
         localStorage.removeItem('token')
       })
     }
+  }
+
+  const [testuser,setTestuser]=useState('')
+  const gettestuser=()=>{
+    axios.get('http://localhost:5000/getuser')
+    .then((res)=>{
+      setTestuser(res.data.username)
+    })
+    .catch(err=>console.log(err))
   }
 
   return (
@@ -68,7 +78,8 @@ function App() {
           showstate.username!==''
           &&
           <Todo/>
-        }
+        } 
+        <h1>{testuser}</h1>
       </div>
     </Router>
   );
