@@ -11,7 +11,7 @@ const routes = require('./routes');
 // Define Global Variables
 const app = express();
 const log = console.log;
-const PORT = process.env.PORT || 8080; // Step 1
+const PORT = process.env.PORT || 5000; // Step 1
 
 
 // Step 2
