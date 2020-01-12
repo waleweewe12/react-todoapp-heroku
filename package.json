@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "devstart": "nodemon server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
@@ -18,5 +18,8 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.4.13",
     "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
