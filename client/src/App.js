@@ -38,7 +38,7 @@ function App() {
 
   const [testuser,setTestuser]=useState('')
   const gettestuser=()=>{
-    axios.get('http://localhost:5000/getuser')
+    axios.get('/getuser')
     .then((res)=>{
       setTestuser(res.data.username)
     })
