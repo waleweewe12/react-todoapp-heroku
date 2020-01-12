@@ -16,7 +16,6 @@ function App() {
 
   useEffect(()=>{
     getusername();
-    gettestuser()
   })
 
   const getusername=()=>{
@@ -36,7 +35,7 @@ function App() {
     }
   }
 
-  const [testuser,setTestuser]=useState('')
+  /*const [testuser,setTestuser]=useState('')
   const gettestuser=()=>{
     axios.get('/getuser')
     .then((res)=>{
@@ -44,7 +43,7 @@ function App() {
       setTestuser(res.data.username)
     })
     .catch(err=>console.log(err))
-  }
+  }*/
 
   return (
     <Router>
@@ -80,7 +79,7 @@ function App() {
           &&
           <Todo/>
         } 
-        <h1>{testuser}</h1>
+        
       </div>
     </Router>
   );

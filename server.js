@@ -28,10 +28,10 @@ mongoose.connect('mongodb+srv://smile69narak:'+process.env.MONGO_ATLAS_PASSWORDS
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/', routes);
-const userRouter=require('./api/routes/user_route');
+//app.use('/', routes);
+//const userRouter=require('./api/routes/user_route');
 const todoRouter=require('./api/routes/todo_route');
-app.use('/user',userRouter);
+//app.use('/user',userRouter);
 app.use('/todo',todoRouter);
 
 // Step 3
