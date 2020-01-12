@@ -1,0 +1,13 @@
+.Login{
+    background-color: white;
+    margin: auto;
+    width: 600px;
+    border: 1px solid white;
+    padding: 30px;
+    border-radius: 25px;
+}
+@media only screen and (max-width: 620px) {
+    .Login {
+      width:400px;
+    }
+}

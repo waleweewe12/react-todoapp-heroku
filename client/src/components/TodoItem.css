@@ -1,0 +1,15 @@
+.todo-item{
+    background-color: #ECF0F1 ;
+    border:1px solid white;
+    margin: auto;
+    padding: 10px;
+    width:600px;
+    border-radius: 10px;
+    margin-bottom:5px;
+}
+@media only screen and (max-width: 620px) {
+    .todo-item {
+      width:300px;
+    }
+}
+

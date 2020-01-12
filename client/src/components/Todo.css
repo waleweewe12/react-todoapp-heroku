@@ -1,0 +1,26 @@
+.todo-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2%;
+    margin-bottom:20px;
+    width: 350px;
+    height:300px;
+}
+.add-todo-button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-bottom:20px;
+}
+.add-todo-form{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    margin-bottom:20px;
+    background-color: #E5E7E9;
+    padding:10px;
+    border-radius: 10px;
+}
