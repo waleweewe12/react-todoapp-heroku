@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app.get('/getuser',(req,res)=>{
+app.get('//getuser',(req,res)=>{
     res.send({
         username:'weerapath'
     })
