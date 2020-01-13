@@ -86,12 +86,18 @@ function TodoItem(props) {
   const handleClose=()=>{
       setShow(!show)
   }
+
+  const [strikethrough,setStrikethrough]=useState(false)
+
   
   return (
     <div className='todo-item'>
         <div className="row">
             <div className="col-md-4 col-sm-12">
-                <p style={{display:'flex'}}>{props.todo}</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" onClick={()=>{setStrikethrough(!strikethrough)}}/>
+                    <label style={{textDecoration:strikethrough ? 'line-through' : 'none'}} class="form-check-label" for="inlineCheckbox1">{props.todo}</label>
+                </div>
             </div>
             <div className='col-md-4 col-sm-12'>
                 <p style={{display:'flex',float:'left'}}>{tododate} (วัน/เดือน/ปี)</p>

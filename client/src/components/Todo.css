@@ -18,9 +18,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width:600px;
     margin-bottom:20px;
     background-color: #E5E7E9;
     padding:10px;
     border-radius: 10px;
+}
+@media only screen and (max-width: 620px) {
+    .add-todo-form {
+      width:300px;
+    }
 }
