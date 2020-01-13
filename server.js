@@ -8,13 +8,11 @@ const cors=require('cors')
 require('dotenv').config();
 
 // importing files
-const routes = require('./routes');
+
 
 // Define Global Variables
 const app = express();
-const log = console.log;
 const PORT = process.env.PORT || 5000; // Step 1
-
 
 // Step 2
 mongoose.connect('mongodb+srv://smile69narak:'+process.env.MONGO_ATLAS_PASSWORDS+'@cluster0-m70hg.mongodb.net/test?retryWrites=true&w=majority',
@@ -28,7 +26,7 @@ mongoose.connect('mongodb+srv://smile69narak:'+process.env.MONGO_ATLAS_PASSWORDS
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/', routes);
+
 const userRouter=require('./api/routes/user_route');
 const todoRouter=require('./api/routes/todo_route');
 app.use('/user',userRouter);
@@ -49,5 +47,5 @@ connection.once('open',()=>{
 })
 
 app.listen(PORT, () => {
-    log(`Server is starting at PORT: ${PORT}`);
+    console.log("application start at port ",PORT)
 });

@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import axios from 'axios'
 import submit from './actions/submit_login'
@@ -35,15 +35,6 @@ function App() {
     }
   }
 
-  /*const [testuser,setTestuser]=useState('')
-  const gettestuser=()=>{
-    axios.get('/getuser')
-    .then((res)=>{
-      console.log(res)
-      setTestuser(res.data.username)
-    })
-    .catch(err=>console.log(err))
-  }*/
 
   return (
     <Router>
