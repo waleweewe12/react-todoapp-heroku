@@ -87,7 +87,16 @@ function TodoItem(props) {
       setShow(!show)
   }
 
-  const [strikethrough,setStrikethrough]=useState(false)
+  const [strikethrough,setStrikethrough]=useState(props.todomarked)
+  const handlecheckbox=()=>{
+    setStrikethrough(!strikethrough)
+    let data={
+        id:props.todo_id
+    }
+    axios.post('/todo/updatemarked',data)
+    .then(result=>console.log(result))
+    .catch(err=>console.log(err))
+  }
 
   
   return (
@@ -95,7 +104,7 @@ function TodoItem(props) {
         <div className="row">
             <div className="col-md-4 col-sm-12">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" onClick={()=>{setStrikethrough(!strikethrough)}}/>
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" onClick={handlecheckbox} checked={strikethrough}/>
                     <label style={{textDecoration:strikethrough ? 'line-through' : 'none'}} class="form-check-label" for="inlineCheckbox1">{props.todo}</label>
                 </div>
             </div>
@@ -106,9 +115,6 @@ function TodoItem(props) {
                 <Button  style={ButtonStyle()} variant="danger" onClick={deleteitem}> delete </Button>
                 <Button  style={ButtonStyle()} variant="primary" onClick={changeitem}>{open ? 'close':'change'}</Button>
             </div>
-        {/*
-        <Button  style={ButtonStyle()} variant="primary" onClick={changeitem}>{open ? 'close':'change'}</Button>
-  <Button  style={ButtonStyle()} variant="danger" onClick={deleteitem}> delete </Button>*/}
         </div>
         
         <Collapse in={open}>

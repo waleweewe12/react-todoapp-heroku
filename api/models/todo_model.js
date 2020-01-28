@@ -18,6 +18,9 @@ const todoSchema=new Schema({
     finish_date_timestamp:{
         type: Number,
         required: true
+    },
+    marked:{
+        type:Boolean
     }
 },{
     timestamps: true,

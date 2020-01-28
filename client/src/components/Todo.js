@@ -51,7 +51,8 @@ function Todo() {
         const data={
           username:user_login.username,
           todo:newtodo,
-          finish_date:newtododate
+          finish_date:newtododate,
+          marked:false
         }
         axios.post('/todo/addTodo',data)
         .then(res=>console.log(res))
@@ -110,7 +111,7 @@ function Todo() {
             &&
             todo.map(todopost=>
               (
-                <TodoItem key={todopost._id} todo={todopost.todo} tododate={todopost.finish_date} todo_id={todopost._id}/>
+                <TodoItem key={todopost._id} todo={todopost.todo} tododate={todopost.finish_date} todo_id={todopost._id} todomarked={todopost.marked}/>
               )
             )
           }

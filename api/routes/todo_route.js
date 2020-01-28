@@ -13,7 +13,8 @@ router.post('/addTodo',(req,res)=>{
         username:req.body.username,
         todo:req.body.todo,
         finish_date:req.body.finish_date,
-        finish_date_timestamp:(new Date(req.body.finish_date)).getTime()
+        finish_date_timestamp:(new Date(req.body.finish_date)).getTime(),
+        marked:req.body.marked
     })
     newTodo.save()
     .then(()=>res.json("todo add"))
@@ -44,6 +45,27 @@ router.post('/updateTodo',(req,res)=>{
     todo.updateOne({_id:req.body.id},dataUpdate)
     .then(()=>res.json('Todo Change!'))
     .catch(err=>console.log(err))
+})
+
+router.post('/updatemarked',(req,res)=>{
+
+    todo.find({_id:req.body.id})
+    .then(result=>{
+        let dataUpdate={
+            marked:!result[0].marked
+        }
+        todo.updateOne({_id:req.body.id},dataUpdate)
+        .then(()=>res.json('Todo Change!'))
+        .catch(err=>console.log(err))
+    })
+    .catch(err=>res.send(err))
+
+   /* let dataUpdate={
+        marked:req.body.marked
+    }
+    todo.updateOne({_id:req.body.id},dataUpdate)
+    .then(()=>res.json('Todo Change!'))
+    .catch(err=>console.log(err))*/
 })
 
 module.exports=router;
