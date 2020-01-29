@@ -2,8 +2,6 @@
 
 Run server ==> npm run devStart
 
-Run client
+Run client==>cd client && npm start
 
-cd client
 
-npm start
