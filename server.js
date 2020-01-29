@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const connection = mongoose.connection
 connection.once('open',()=>{
-    console.log("Mongoose Connection!!")
+    console.log("Mongoose Connected")
 })
 
 app.listen(PORT, () => {
