@@ -4,7 +4,7 @@ Run server ==> npm run devStart
 
 Run client==>cd client && npm start
 
-example user
+#example user
 
 username : weerapath
 
